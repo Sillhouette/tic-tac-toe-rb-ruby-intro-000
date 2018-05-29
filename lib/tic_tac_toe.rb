@@ -143,11 +143,6 @@ end
 ##
 # This method checks to see if the board is full
 ##
-  if full?(board)
-    return false;
-  end
-end
-
 def full?(board)
   return board.detect{|i| i == " "} ? false : true
 end
