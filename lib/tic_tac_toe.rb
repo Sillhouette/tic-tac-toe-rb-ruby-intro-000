@@ -32,7 +32,7 @@ end
 # This method takes the board, index the player wants to use, and the token of the
 # player and makes the move on the board
 ##
-def move(board, index, character)
+def move(board, index, character = "X")
   board[index] = character
   return board
 end
@@ -68,6 +68,16 @@ end
 # initiating the move and displaying the board. If the move is
 # not valid it will simply ask them for a new move.
 ##
+def valid_move?(board, index)
+  if(index.between?(0,8) && !position_taken?(board, index))
+    if((board.length < index) && position_taken?)
+      return true
+    else
+      return false
+    end
+  end
+end
+
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
@@ -133,6 +143,11 @@ end
 ##
 # This method checks to see if the board is full
 ##
+  if full?(board)
+    return false;
+  end
+end
+
 def full?(board)
   return board.detect{|i| i == " "} ? false : true
 end
@@ -173,4 +188,21 @@ def play(board)
   elsif draw?(board)
     puts "Cat's Game!"
   end
+def draw?(board)
+  return !won?(board) && full?(board) ? true : false
+end
+
+def over?(board)
+  return won?(board) || draw?(board)
+end
+
+def winner(board)
+  winner = won?(board)
+  return won?(board) == nil ? nil : board[winner[0]]
+end
+
+def play(board)
+  input = gets;
+
+  over?(board)
 end

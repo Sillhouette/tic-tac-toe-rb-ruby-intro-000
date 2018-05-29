@@ -4,7 +4,11 @@ require_relative '../lib/tic_tac_toe'
 
 puts "Welcome to Tic Tac Toe!"
 
+<<<<<<< HEAD
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
+=======
+board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+>>>>>>> ed34871a17f1f4ba819beb9aa43a337e556088ab
 
 display_board(board);
 
