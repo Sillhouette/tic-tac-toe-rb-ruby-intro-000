@@ -55,10 +55,6 @@ end
 ##
 def valid_move?(board, index)
   return index.between?(0, 8) && !position_taken?(board, index)) ? true : false;
-    return true
-  else
-    return false
-  end
 end
 
 ##
@@ -68,16 +64,6 @@ end
 # initiating the move and displaying the board. If the move is
 # not valid it will simply ask them for a new move.
 ##
-def valid_move?(board, index)
-  if(index.between?(0,8) && !position_taken?(board, index))
-    if((board.length < index) && position_taken?)
-      return true
-    else
-      return false
-    end
-  end
-end
-
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
