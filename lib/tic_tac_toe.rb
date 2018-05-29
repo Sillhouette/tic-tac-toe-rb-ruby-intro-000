@@ -54,7 +54,7 @@ end
 # A valid move has an index between 0-8 and is not in a position that is already taken.
 ##
 def valid_move?(board, index)
-  return index.between?(0, 8) && !position_taken?(board, index)) ? true : false;
+  return index.between?(0, 8) && !position_taken?(board, index) ? true : false;
 end
 
 ##
