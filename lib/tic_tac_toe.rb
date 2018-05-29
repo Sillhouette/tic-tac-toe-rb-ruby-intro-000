@@ -32,7 +32,7 @@ end
 # This method takes the board, index the player wants to use, and the token of the
 # player and makes the move on the board
 ##
-def move(board, index, character = "X")
+def move(board, index, character)
   board[index] = character
   return board
 end
