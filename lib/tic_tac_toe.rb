@@ -183,21 +183,3 @@ def play(board)
   elsif draw?(board)
     puts "Cat's Game!"
   end
-def draw?(board)
-  return !won?(board) && full?(board) ? true : false
-end
-
-def over?(board)
-  return won?(board) || draw?(board)
-end
-
-def winner(board)
-  winner = won?(board)
-  return won?(board) == nil ? nil : board[winner[0]]
-end
-
-def play(board)
-  input = gets;
-
-  over?(board)
-end
